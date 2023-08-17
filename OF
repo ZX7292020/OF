@@ -495,3 +495,613 @@ function library:Window(options)
                     local Section_Frame_2 = Instance.new("Frame")
                     Section_Frame_2.Name = "Section_Frame"
                     Section_Frame_2.Parent = InnerPage
+                    Section_Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    Section_Frame_2.BackgroundTransparency = 1.000
+                    Section_Frame_2.BorderSizePixel = 0
+                    Section_Frame_2.Position = UDim2.new(0, 0, -0.0231884066, 0)
+                    Section_Frame_2.Size = UDim2.new(0, 280, 0, 33)
+
+                    local NewSecName = Instance.new("TextLabel")
+                    NewSecName.Name = "NewSecName"
+                    NewSecName.Parent = Section_Frame_2
+                    NewSecName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    NewSecName.BackgroundTransparency = 1.000
+                    NewSecName.BorderSizePixel = 0
+                    NewSecName.Position = UDim2.new(0.142857228, 0, 0.212121218, 0)
+                    NewSecName.Size = UDim2.new(0, 200, 0, 13)
+                    NewSecName.Font = Enum.Font.Gotham
+                    NewSecName.Text = Title
+                    NewSecName.TextColor3 = Color3.fromRGB(50, 50, 50)
+                    NewSecName.TextSize = 14.000
+
+                    local SepFrame = Instance.new("Frame")
+                    SepFrame.Name = "SepFrame"
+                    SepFrame.Parent = Section_Frame_2
+                    SepFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+                    SepFrame.BorderSizePixel = 0
+                    SepFrame.Position = UDim2.new(0.042857144, 0, 0.724444449, 0)
+                    SepFrame.Size = UDim2.new(0, 258, 0, 1)
+
+                    local main_functions = {}
+
+                    function main_functions:Button(options)
+                        local Title = options.Text or "uiButton"
+                        local callback = options.Callback or function() end
+
+                        local uiButton = Instance.new("TextButton")
+                        uiButton.Name = "uiButton"
+                        uiButton.Parent = InnerPage
+                        uiButton.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                        uiButton.BorderSizePixel = 0
+                        uiButton.Size = UDim2.new(0, 258, 0, 30)
+                        uiButton.AutoButtonColor = false
+                        uiButton.Font = Enum.Font.Gotham
+                        uiButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        uiButton.TextSize = 14.000
+                        uiButton.Text = Title
+
+                        local uibutton_corner = Instance.new("UICorner")
+                        uibutton_corner.CornerRadius = UDim.new(0, 6)
+                        uibutton_corner.Name = "uibutton_corner"
+                        uibutton_corner.Parent = uiButton
+                        
+                        uiButton.MouseButton1Click:Connect(function()
+                            callback()
+                        end)
+
+                        local button_functions = {}
+
+                        function button_functions:Update(text)
+                            uiButton.Text = text
+                        end
+
+                        return button_functions
+                    end
+
+                    function main_functions:Toggle(options)
+                        local Title = options.Text 
+                        local callback = options.Callback 
+                        local State = options.State or false
+                        if State == nil then State = false end
+
+                        local uiToggle = Instance.new("TextButton")
+                        uiToggle.Name = "uiToggle"
+                        uiToggle.Parent = InnerPage
+                        uiToggle.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                        uiToggle.BackgroundTransparency = 1.000
+                        uiToggle.BorderSizePixel = 0
+                        uiToggle.Size = UDim2.new(0, 258, 0, 30)
+                        uiToggle.AutoButtonColor = false
+                        uiToggle.Font = Enum.Font.Gotham
+                        uiToggle.Text = ""
+                        uiToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        uiToggle.TextSize = 14.000
+
+                        local uitoggle_corner = Instance.new("UICorner")
+                        uitoggle_corner.CornerRadius = UDim.new(0, 6)
+                        uitoggle_corner.Name = "uitoggle_corner"
+                        uitoggle_corner.Parent = uiToggle
+
+                        local T1 = Instance.new("Frame")
+                        T1.Name = "T1"
+                        T1.Parent = uiToggle
+                        T1.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+                        T1.BorderSizePixel = 0
+                        T1.Position = UDim2.new(0.00387597084, 0, 0.166666672, 0)
+                        T1.Size = UDim2.new(0, 20, 0, 20)
+
+                        local UICorner = Instance.new("UICorner")
+                        UICorner.CornerRadius = UDim.new(0, 4)
+                        UICorner.Parent = T1
+
+                        local T2 = Instance.new("Frame")
+                        T2.Name = "T2"
+                        T2.Parent = T1
+                        T2.BackgroundColor3 = Accent
+                        T2.BackgroundTransparency = 1
+                        T2.BorderSizePixel = 0
+                        T2.Position = UDim2.new(0.150000006, 0, 0.150000006, 0)
+                        T2.Size = UDim2.new(0, 14, 0, 14)
+
+                        local UICorner_2 = Instance.new("UICorner")
+                        UICorner_2.CornerRadius = UDim.new(0, 4)
+                        UICorner_2.Parent = T2
+
+                        local TextLabel = Instance.new("TextLabel")
+                        TextLabel.Parent = uiToggle
+                        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        TextLabel.BackgroundTransparency = 1.000
+                        TextLabel.BorderSizePixel = 0
+                        TextLabel.Position = UDim2.new(0.116279073, 0, 0.366666675, 0)
+                        TextLabel.Size = UDim2.new(0, 200, 0, 8)
+                        TextLabel.Font = Enum.Font.Gotham
+                        TextLabel.Text = Title
+                        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        TextLabel.TextSize = 14.000
+                        TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+                        local toggled = false 
+
+                        if State == true then 
+                            toggled = true
+                            callback(toggled)
+                            TweenService:Create(T2, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {BackgroundTransparency = 0}):Play()
+                        else
+                            toggled = false
+                            callback(toggled)
+                            TweenService:Create(T2, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {BackgroundTransparency = 1}):Play()
+                        end
+
+                        uiToggle.MouseButton1Click:Connect(function()
+                            if toggled == false then 
+                                toggled = true
+                                callback(toggled)
+                                TweenService:Create(T2, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {BackgroundTransparency = 0}):Play()
+                            else
+                                toggled = false
+                                callback(toggled)
+                                TweenService:Create(T2, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {BackgroundTransparency = 1}):Play()
+                            end
+                        end)
+
+                        local toggle_functions = {}
+
+                        function toggle_functions:SetState(State)
+                            if State == true then 
+                                toggled = true
+                                callback(toggled)
+                                TweenService:Create(T2, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {BackgroundTransparency = 0}):Play()
+                            else
+                                toggled = false
+                                callback(toggled)
+                                TweenService:Create(T2, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {BackgroundTransparency = 1}):Play()
+                            end
+                        end
+
+                        return toggle_functions
+                    end
+
+                    function main_functions:TextLabel(options)
+                        local Title = options.Text or  "TextLabel"
+
+                        local uiTextlabel = Instance.new("TextLabel")
+                        uiTextlabel.Name = "uiTextlabel"
+                        uiTextlabel.Parent = InnerPage
+                        uiTextlabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        uiTextlabel.BackgroundTransparency = 1.000
+                        uiTextlabel.BorderSizePixel = 0
+                        uiTextlabel.Size = UDim2.new(0, 258, 0, 30)
+                        uiTextlabel.Font = Enum.Font.Gotham
+                        uiTextlabel.Text = Title
+                        uiTextlabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        uiTextlabel.TextSize = 14.000
+                        uiTextlabel.TextXAlignment = Enum.TextXAlignment.Left
+
+                        local lable_functions = {}
+
+                        function lable_functions:Update(Title)
+                            uiTextlabel.Text = Title
+                        end
+
+                        return lable_functions
+                    end
+
+                    function main_functions:Divide()
+                        local uiSep = Instance.new("Frame")
+                        uiSep.Name = "uiSep"
+                        uiSep.Parent = InnerPage
+                        uiSep.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+                        uiSep.BorderSizePixel = 0
+                        uiSep.Position = UDim2.new(0.042857144, 0, 0.724444449, 0)
+                        uiSep.Size = UDim2.new(0, 258, 0, 1)
+                    end
+
+                    function main_functions:Keybind(options)
+                        local Title = options.Text or "Keybind"
+                        local Key = options.Key.Name
+                        local callback = options.Callback or function() end 
+
+                        local uiKeybind = Instance.new("TextButton")
+                        uiKeybind.Name = "uiKeybind"
+                        uiKeybind.Parent = InnerPage
+                        uiKeybind.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                        uiKeybind.BorderSizePixel = 0
+                        uiKeybind.Size = UDim2.new(0, 258, 0, 30)
+                        uiKeybind.AutoButtonColor = false
+                        uiKeybind.Font = Enum.Font.Gotham
+                        uiKeybind.Text = Title
+                        uiKeybind.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        uiKeybind.TextSize = 14.000
+
+                        local uikeybind = Instance.new("UICorner")
+                        uikeybind.CornerRadius = UDim.new(0, 6)
+                        uikeybind.Name = "uikeybind"
+                        uikeybind.Parent = uiKeybind
+
+                        local key_text = Instance.new("TextLabel")
+                        key_text.Name = "key_text"
+                        key_text.Parent = uiKeybind
+                        key_text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        key_text.BackgroundTransparency = 1.000
+                        key_text.BorderSizePixel = 0
+                        key_text.Position = UDim2.new(0.86434108, 0, 0.0666666701, 0)
+                        key_text.Size = UDim2.new(0, 25, 0, 25)
+                        key_text.Font = Enum.Font.Gotham
+                        key_text.Text = '[' .. Key .. ']'
+                        key_text.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        key_text.TextSize = 14.000
+
+                        uiKeybind.MouseButton1Click:Connect(function()
+                            key_text.Text = '[. . .]'
+                            local a, b = game:GetService('UserInputService').InputBegan:wait();
+                            if a.KeyCode.Name ~= "Unknown" then
+                                key_text.Text = '[' .. a.KeyCode.Name .. ']'
+                                Key = a.KeyCode.Name;
+                            end
+                        end)
+                        
+                        game:GetService("UserInputService").InputBegan:connect(function(current, pressed)
+                            if not pressed then
+                                if current.KeyCode.Name == Key then
+                                    callback(Key)
+                                end
+                            end
+                        end)
+
+                        local keybind_functions = {}
+
+                        function keybind_functions:UpdateKey(option)
+                            key_text.Text = '[' .. option.Name .. ']'
+                            Key = option.Name;
+                            callback(Key)
+                        end
+
+                        return keybind_functions
+                    end
+
+                    function main_functions:Textbox(options)
+                        local Title = options.Text or "Textbox"
+                        local callback = options.Callback or function() end 
+
+                        local text_shell = Instance.new("TextButton")
+                        text_shell.Name = "text_shell"
+                        text_shell.Parent = InnerPage
+                        text_shell.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                        text_shell.BorderSizePixel = 0
+                        text_shell.Size = UDim2.new(0, 258, 0, 30)
+                        text_shell.AutoButtonColor = false
+                        text_shell.Font = Enum.Font.Gotham
+                        text_shell.Text = ""
+                        text_shell.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        text_shell.TextSize = 14.000
+
+                        local textshell_corner = Instance.new("UICorner")
+                        textshell_corner.CornerRadius = UDim.new(0, 6)
+                        textshell_corner.Name = "textshell_corner"
+                        textshell_corner.Parent = text_shell
+
+                        local TextBox = Instance.new("TextBox")
+                        TextBox.Parent = text_shell
+                        TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        TextBox.BackgroundTransparency = 1.000
+                        TextBox.BorderSizePixel = 0
+                        TextBox.Position = UDim2.new(0.0542635657, 0, 0.233333334, 0)
+                        TextBox.Size = UDim2.new(0, 228, 0, 15)
+                        TextBox.Font = Enum.Font.Gotham
+                        TextBox.Text = Title
+                        TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        TextBox.TextScaled = true
+                        TextBox.TextSize = 12.000
+                        TextBox.TextWrapped = true
+
+                        TextBox.FocusLost:Connect(function(enterPressed)
+                            callback(TextBox.Text)
+                        end)
+
+                        local textbox_functions = {}
+
+                        function textbox_functions:Update(text)
+                            TextBox.Text = text 
+                            callback(TextBox.Text)
+                        end
+
+                        return textbox_functions
+                    end
+
+                    function main_functions:Dropdown(options)
+                        local Title = options.Text or 'Dropdown'
+                        local List = options.List or {}
+                        local callback = options.Callback or function() end 
+
+                        local uiDropdown = Instance.new("TextButton")
+                        uiDropdown.Name = "uiDropdown"
+                        uiDropdown.Parent = InnerPage
+                        uiDropdown.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                        uiDropdown.BorderSizePixel = 0
+                        uiDropdown.Size = UDim2.new(0, 258, 0, 30)
+                        uiDropdown.AutoButtonColor = false
+                        uiDropdown.Font = Enum.Font.Gotham
+                        uiDropdown.Text = Title
+                        uiDropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        uiDropdown.TextSize = 14.000
+
+                        local uidropdown_corner = Instance.new("UICorner")
+                        uidropdown_corner.CornerRadius = UDim.new(0, 6)
+                        uidropdown_corner.Name = "uidropdown_corner"
+                        uidropdown_corner.Parent = uiDropdown
+
+                        local Toggle_Section_2 = Instance.new("ImageLabel")
+                        Toggle_Section_2.Name = "Toggle_Section"
+                        Toggle_Section_2.Parent = uiDropdown
+                        Toggle_Section_2.BackgroundTransparency = 1.000
+                        Toggle_Section_2.Position = UDim2.new(0.862015605, 0, 0.0666666552, 0)
+                        Toggle_Section_2.Rotation = 270.000
+                        Toggle_Section_2.Size = UDim2.new(0, 25, 0, 25)
+                        Toggle_Section_2.Image = "rbxassetid://4370337241"
+                        Toggle_Section_2.ScaleType = Enum.ScaleType.Fit
+
+                        local Dropdown_Container = Instance.new("ScrollingFrame")
+                        Dropdown_Container.Name = "Dropdown_Container"
+                        Dropdown_Container.Parent = InnerPage
+                        Dropdown_Container.Active = true
+                        Dropdown_Container.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        Dropdown_Container.BackgroundTransparency = 1
+                        Dropdown_Container.BorderSizePixel = 0
+                        Dropdown_Container.Position = UDim2.new(0.0392857157, 0, 0.515942037, 0)
+                        Dropdown_Container.Size = UDim2.new(0, 258, 0, 0)
+                        Dropdown_Container.ScrollBarThickness = 0
+                        Dropdown_Container.ClipsDescendants = true
+                        Dropdown_Container.Visible = false
+                        
+                        local drop_con_layout = Instance.new("UIListLayout")
+                        drop_con_layout.Name = "drop_con_layout"
+                        drop_con_layout.Parent = Dropdown_Container
+                        drop_con_layout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+                        drop_con_layout.SortOrder = Enum.SortOrder.LayoutOrder
+                        drop_con_layout.Padding = UDim.new(0, 4)
+
+                        local droptog = false
+                        uiDropdown.MouseButton1Click:Connect(function()
+                            if droptog == false then 
+                                droptog = true 
+                                Dropdown_Container.Visible = true
+                                TweenService:Create(Toggle_Section_2, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Rotation = 90}):Play()
+                                TweenService:Create(Dropdown_Container, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 258, 0, drop_con_layout.AbsoluteContentSize.Y)}):Play()
+                            else
+                                droptog = false 
+                                TweenService:Create(Toggle_Section_2, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Rotation = 270}):Play()
+                                local tween = TweenService:Create(Dropdown_Container, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 258, 0, 0)})
+                                tween:Play()
+                                tween.Completed:Connect(function(playbackState)
+                                    if playbackState == Enum.PlaybackState.Completed then
+                                        Dropdown_Container.Visible = false
+                                    end
+                                end)
+                            end
+                        end)
+
+                        
+                        drop_con_layout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+                            Dropdown_Container.CanvasSize = UDim2.new(0,0,0,drop_con_layout.AbsoluteContentSize.Y) 
+                        end)
+
+                        for i,v in pairs(List) do
+                            local option = Instance.new("TextButton")
+                            option.Name = "option"
+                            option.Parent = Dropdown_Container
+                            option.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                            option.BorderSizePixel = 0
+                            option.Size = UDim2.new(0, 258, 0, 20)
+                            option.AutoButtonColor = false
+                            option.Font = Enum.Font.Gotham
+                            option.Text = v
+                            option.TextColor3 = Color3.fromRGB(255, 255, 255)
+                            option.TextSize = 11.000
+
+                            local option_corner = Instance.new("UICorner")
+                            option_corner.Name = "option_corner"
+                            option_corner.Parent = option
+
+                            option.MouseButton1Click:Connect(function()
+                                uiDropdown.Text = Title .. ' - ' .. option.Text
+                                droptog = false
+                                callback(option.Text)
+                                TweenService:Create(Toggle_Section_2, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Rotation = 270}):Play()
+                                local tween = TweenService:Create(Dropdown_Container, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 258, 0, 0)})
+                                tween:Play()
+                                tween.Completed:Connect(function(playbackState)
+                                    if playbackState == Enum.PlaybackState.Completed then
+                                        wait()
+                                        Dropdown_Container.Visible = false
+                                    end
+                                end)
+                            end)
+                        end
+
+                        local dropdown_functions = {}
+
+                        function dropdown_functions:UpdateList(List)
+                            local List = List or {}
+
+                            droptog = false
+                            TweenService:Create(Toggle_Section_2, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Rotation = 270}):Play()
+                            TweenService:Create(Dropdown_Container, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 258, 0, 0)}):Play()
+
+                            for i,v in pairs(Dropdown_Container:GetChildren()) do
+                                if v.Name == "option" then 
+                                    v:Destroy()
+                                end
+                            end
+
+                            for i,v in pairs(List) do
+                                local option = Instance.new("TextButton")
+                                option.Name = "option"
+                                option.Parent = Dropdown_Container
+                                option.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                                option.BorderSizePixel = 0
+                                option.Size = UDim2.new(0, 258, 0, 20)
+                                option.AutoButtonColor = false
+                                option.Font = Enum.Font.Gotham
+                                option.Text = v
+                                option.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                option.TextSize = 11.000
+    
+                                local option_corner = Instance.new("UICorner")
+                                option_corner.Name = "option_corner"
+                                option_corner.Parent = option
+    
+                                option.MouseButton1Click:Connect(function()
+                                    uiDropdown.Text = Title .. ' - ' .. option.Text
+                                    droptog = false
+                                    callback(option.Text)
+                                    TweenService:Create(Toggle_Section_2, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Rotation = 270}):Play()
+                                    local tween = TweenService:Create(Dropdown_Container, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Size = UDim2.new(0, 258, 0, 0)})
+                                    tween:Play()
+                                    tween.Completed:Connect(function(playbackState)
+                                        if playbackState == Enum.PlaybackState.Completed then
+                                            wait()
+                                            Dropdown_Container.Visible = false
+                                        end
+                                    end)
+                                end)
+                            end
+                        end
+
+                        return dropdown_functions
+                    end
+
+                    function main_functions:Slider(options)
+                        local Title = options.Text or 'Slider'
+                        local Min = options.Min or 0 
+                        local Max = options.Max or 100 
+                        local Def = options.Def or 50
+                        local callback = options.Callback or function() end 
+
+                        local slider_holder = Instance.new("TextButton")
+                        slider_holder.Name = "slider_holder"
+                        slider_holder.Parent = InnerPage
+                        slider_holder.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                        slider_holder.BorderSizePixel = 0
+                        slider_holder.Size = UDim2.new(0, 258, 0, 50)
+                        slider_holder.AutoButtonColor = false
+                        slider_holder.Font = Enum.Font.Gotham
+                        slider_holder.Text = ""
+                        slider_holder.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        slider_holder.TextSize = 14.000
+
+                        local uislider_corner = Instance.new("UICorner")
+                        uislider_corner.CornerRadius = UDim.new(0, 6)
+                        uislider_corner.Name = "uislider_corner"
+                        uislider_corner.Parent = slider_holder
+
+                        local slider_name = Instance.new("TextLabel")
+                        slider_name.Name = "slider_name"
+                        slider_name.Parent = slider_holder
+                        slider_name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        slider_name.BackgroundTransparency = 1.000
+                        slider_name.Position = UDim2.new(0.0503875986, 0, 0.159999996, 0)
+                        slider_name.Size = UDim2.new(0, 100, 0, 10)
+                        slider_name.Font = Enum.Font.Gotham
+                        slider_name.Text = Title
+                        slider_name.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        slider_name.TextSize = 14.000
+                        slider_name.TextXAlignment = Enum.TextXAlignment.Left
+
+                        local slider_shell = Instance.new("Frame")
+                        slider_shell.Name = "slider_shell"
+                        slider_shell.Parent = slider_holder
+                        slider_shell.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                        slider_shell.Position = UDim2.new(0.0503875986, 0, 0.479999989, 0)
+                        slider_shell.Size = UDim2.new(0, 230, 0, 20)
+
+                        local slidershell_corner = Instance.new("UICorner")
+                        slidershell_corner.CornerRadius = UDim.new(0, 6)
+                        slidershell_corner.Name = "slidershell_corner"
+                        slidershell_corner.Parent = slider_shell
+
+                        local uiSlider = Instance.new("Frame")
+                        uiSlider.Name = "uiSlider"
+                        uiSlider.Parent = slider_shell
+                        uiSlider.BackgroundColor3 = Accent
+                        uiSlider.Position = UDim2.new(0.00434782589, 0, 0.0500000007, 0)
+                        uiSlider.Size = UDim2.new((Def or 0) / Max, 0, 0, 18)
+                        uiSlider.BorderSizePixel = 0
+
+                        local uislider_corner_2 = Instance.new("UICorner")
+                        uislider_corner_2.CornerRadius = UDim.new(0, 6)
+                        uislider_corner_2.Name = "uislider_corner"
+                        uislider_corner_2.Parent = uiSlider
+
+                        local slider_text = Instance.new("TextLabel")
+                        slider_text.Name = "slider_text"
+                        slider_text.Parent = slider_shell
+                        slider_text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        slider_text.BackgroundTransparency = 1.000
+                        slider_text.Position = UDim2.new(0.02434782589, 0, 0.0500000007, 0)
+                        slider_text.Size = UDim2.new(0, 228, 0, 18)
+                        slider_text.Font = Enum.Font.Gotham
+                        slider_text.Text = tostring(Def and math.floor((Def / Max) * (Max - Min) + Min) or 0) .. '/' .. tostring(Max)
+                        slider_text.TextColor3 = Color3.fromRGB(200, 200, 200)
+                        slider_text.TextSize = 10.000
+                        slider_text.TextXAlignment = Enum.TextXAlignment.Left
+
+                        -- // Slider by Dawid cause idk how to make them \\ -- 
+                        local dragging = false 
+
+                        local function slide(input)
+                            local pos = UDim2.new(math.clamp((input.Position.X - slider_shell.AbsolutePosition.X) / slider_shell.AbsoluteSize.X, 0, 1), 0, 0, 18)
+                            uiSlider:TweenSize(pos, Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.3, true)
+                            local value = math.floor(((pos.X.Scale * Max) / Max) * (Max - Min) + Min)
+                            slider_text.Text = tostring(value) .. '/' .. Max
+                            callback(value)
+                        end
+
+                        slider_shell.InputBegan:Connect(function(input)
+                            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                                slide(input)
+                                dragging = true
+                            end
+                        end)
+            
+                        slider_shell.InputEnded:Connect(function(input)
+                            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                                dragging = false
+                            end
+                        end)
+            
+                        UserInputService.InputChanged:Connect(function(input)
+                            if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+                                slide(input)
+                            end
+                        end)
+
+                        local slider_functions = {}
+
+                        function slider_functions:UpdateSlider(Def)
+                            local value = tostring(Def and math.floor((Def / Max) * (Max - Min) + Min) or 0) .. '/' .. tostring(Max)
+                            slider_text.Text = value
+                            callback(value)
+
+                            local pos = UDim2.new((Def or 0) / Max, 0, 0, 18)
+                            uiSlider:TweenSize(pos, Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.3, true)
+                        end
+
+                        return slider_functions
+                    end
+
+                    return main_functions
+                end
+
+                return frame_sections
+            end
+
+            return columns
+        end
+
+        return mid_sections
+    end
+
+    return TabsFunc
+end
+
+return library
